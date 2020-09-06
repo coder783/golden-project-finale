@@ -35,7 +35,6 @@ class Form{
        this.instructionBox = createElement("div");
     }
     gameStateZero(){
-        var mask1 = 0;
         background(bg_img);
             this.instruction.position(windowWidth-500, 60);
                 if(gameState == 0  ){

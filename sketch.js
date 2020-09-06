@@ -14,6 +14,7 @@ var bg_img3;
 var invisibleGround;
 var bg;
 var ground;
+var mask1 = 0;
 
 function preload(){
   //player_img1 = loadImage("player10.png");
