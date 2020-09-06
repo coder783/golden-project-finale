@@ -35,6 +35,7 @@ class Form{
        this.instructionBox = createElement("div");
     }
     gameStateZero(){
+        var mask1;
         background(bg_img);
             this.instruction.position(windowWidth-500, 60);
                 if(gameState == 0  ){
@@ -50,8 +51,9 @@ class Form{
                     if(touches.length > 0){
                         this.instruction.html("Congrats You Have <br>Sanitized Your Hands<br>tap the screen to wear a mask" + touches.length);
                         touches = [];
+                        mask1 = 1;
                     }
-                    if(touches.length > 0){
+                    if(mask1 === 1 &&touches.length > 0){
                         this.instruction.html("Congrats You Wore Your<br> Mask You May Continue" + touches.length)
                         player.changeImage("boy with mask", this.image2);
                         player.addAnimation("astronaut animation", this.animation);
