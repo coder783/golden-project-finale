@@ -18,10 +18,11 @@ class Form{
 
        x = windowWidth/2;
        y = 550;
-       if (isMobile) { 
-           /*Conditional script here */
-           this.instruction = createElement("h2", "You have been chosen to <br> get the cure of the virus <br> from mars but first <br>u need to wash your <br>hands  tap the screen" );
-       }
+       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+        this.instruction = createElement("h2", "You have been chosen to <br> get the cure of the virus <br> from mars but first <br>u need to wash your <br>hands  tap the screen" );  
+        }
+            
+        
         else{
             this.instruction = createElement("h2", "You have been chosen to <br> get the cure of the virus <br> from mars but first <br>u need to wash your <br>hands(press h)" );
         }

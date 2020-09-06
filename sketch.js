@@ -14,7 +14,6 @@ var bg_img3;
 var invisibleGround;
 var bg;
 var ground;
-var isMobile;
 
 function preload(){
   //player_img1 = loadImage("player10.png");
@@ -28,7 +27,6 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth ,windowHeight);
-  $(function() { isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;  });
   form = new Form();
 
   obstacle2 = new Obstacle();
