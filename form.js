@@ -58,7 +58,7 @@ class Form{
                         player.changeImage("boy with mask", this.image2);
                         player.addAnimation("astronaut animation", this.animation);
                         gameState = 1;
-                        touches = [];
+                        
                     }
                     }
                     
@@ -66,6 +66,7 @@ class Form{
         }
 
     gameStateOne(){
+        touches = [];
         this.instruction.html("Congrats You Have Taken<br> The Measures To Protect<br> Yourself.Press \"g\" to go<br> to the next level");
             if(gameState == 1 && keyDown("g")){
                 gameState = 2;
