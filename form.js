@@ -19,7 +19,7 @@ class Form{
        x = windowWidth/2;
        y = 550;
         if(windowWidth < 450){
-            this.instruction = createElement("h2", "You have been chosen to <br> get the cure of the virus <br> from mars but first <br>u need to wash your <br>hands double tap the screen" ); 
+            this.instruction = createElement("h2", "You have been chosen to <br> get the cure of the virus <br> from mars but first <br>u need to wash your <br>hands  tap the screen" ); 
         }
         else{
             this.instruction = createElement("h2", "You have been chosen to <br> get the cure of the virus <br> from mars but first <br>u need to wash your <br>hands(press h)" );
@@ -45,10 +45,11 @@ class Form{
                         player.addAnimation("astronaut animation", this.animation);
                         gameState = 1;
                     }
-                    if(touches.length > 1){
-                        this.instruction.html("Congrats You Have <br>Sanitized Your Hands<br>Double tap the screen to wear a mask");
+                    if(touches.length > 0){
+                        this.instruction.html("Congrats You Have <br>Sanitized Your Hands<br>tap the screen to wear a mask");
+                        touches = [];
                     }
-                    if(touches.length > 3){
+                    if(touches.length > 0){
                         this.instruction.html("Congrats You Wore Your<br> Mask You May Continue")
                         player.changeImage("boy with mask", this.image2);
                         player.addAnimation("astronaut animation", this.animation);
