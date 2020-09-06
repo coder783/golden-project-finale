@@ -48,11 +48,11 @@ class Form{
                         gameState = 1;
                     }
                     if(touches.length > 0){
-                        this.instruction.html("Congrats You Have <br>Sanitized Your Hands<br>tap the screen to wear a mask");
+                        this.instruction.html("Congrats You Have <br>Sanitized Your Hands<br>tap the screen to wear a mask" + touches.length);
                         touches = [];
                     }
                     if(touches.length > 0){
-                        this.instruction.html("Congrats You Wore Your<br> Mask You May Continue")
+                        this.instruction.html("Congrats You Wore Your<br> Mask You May Continue" + touches.length)
                         player.changeImage("boy with mask", this.image2);
                         player.addAnimation("astronaut animation", this.animation);
                         gameState = 1;
