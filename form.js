@@ -18,7 +18,7 @@ class Form{
 
        x = windowWidth/2;
        y = 550;
-        if(windowWidth < 450){
+        if(window.innerWidth < 450 ){
             this.instruction = createElement("h2", "You have been chosen to <br> get the cure of the virus <br> from mars but first <br>u need to wash your <br>hands  tap the screen" ); 
         }
         else{
