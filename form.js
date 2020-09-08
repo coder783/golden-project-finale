@@ -17,7 +17,7 @@ class Form{
        player.addImage("player as astronaut", this.image8);
 
        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
-        this.up_arrow = createButton();
+        this.up_arrow = createButton("");
         this.left_arrow = createButton("LEFT");
         this.right_arrow = createButton("RIGHT");
         }
