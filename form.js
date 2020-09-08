@@ -88,7 +88,7 @@ class Form{
             if(gameState == 1 && touches.length > 0){
                 gameState = 2;
                 this.up_arrow.position(windowWidth - 200, windowHeight *2/3);
-                this.up_arrow.class("Arrows");
+                //this.up_arrow.class("Arrows");
                 this.up_arrow.class("Up-arrow");
                 this.up_arrow.style("background", "transparent");
                 touches = [];
