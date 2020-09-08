@@ -57,19 +57,31 @@ class Form{
                         player.changeImage("boy with mask", this.image2);
                         player.addAnimation("astronaut animation", this.animation);
                         gameState = 1;
+                        touches = [];
                         
                     }
+                   
                     }
+                    
                     
        
         }
 
     gameStateOne(){
-        touches = [];
-        this.instruction.html("Congrats You Have Taken<br> The Measures To Protect<br> Yourself.Press \"g\" to go<br> to the next level");
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+            this.instruction.html("Congrats You Have Taken<br> The Measures To Protect<br> Yourself.Tap the screen to go<br> to the next level");
+            }
+            else{
+                this.instruction.html("Congrats You Have Taken<br> The Measures To Protect<br> Yourself.Press \"g\" to go<br> to the next level");
+            }
+        
             if(gameState == 1 && keyDown("g")){
                 gameState = 2;
                 console.log("yup");
+            }
+            if(gameState == 1 && touches.length > 0){
+                gameState = 2;
+                touches = [];
             }
         }
     
