@@ -16,6 +16,12 @@ class Form{
        player.addImage("player's rocket", this.image5);
        player.addImage("player as astronaut", this.image8);
 
+       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+        this.up_arrow = createButton("UP");
+        this.left_arrow = createButton("LEFT");
+        this.right_arrow = createButton("RIGHT");
+        }
+       
        x = windowWidth/2;
        y = 550;
        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
@@ -81,6 +87,7 @@ class Form{
             }
             if(gameState == 1 && touches.length > 0){
                 gameState = 2;
+                this.up_arrow.position(windowWidth - 200, windowHeight *2/3)
                 touches = [];
             }
         }
@@ -115,6 +122,8 @@ class Form{
                     gameState = 4;
                     y2  = 550;
                     x2 = windowWidth/2;
+                    this.left_arrow.position(windowWidth - 200, windowHeight *2/3);
+                    this.right_arrow.position(windowWidth - 200, windowHeight *2/3);
                 }
         }
         
