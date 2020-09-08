@@ -17,7 +17,7 @@ class Form{
        player.addImage("player as astronaut", this.image8);
 
        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
-        this.up_arrow = createButton("UP");
+        this.up_arrow = createButton();
         this.left_arrow = createButton("LEFT");
         this.right_arrow = createButton("RIGHT");
         }
@@ -89,6 +89,7 @@ class Form{
                 gameState = 2;
                 this.up_arrow.position(windowWidth - 200, windowHeight *2/3);
                 this.up_arrow.class("Arrows");
+                this.up_arrow.class("Up-arrow");
                 this.up_arrow.style("background", "transparent");
                 touches = [];
             }
