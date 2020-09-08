@@ -6,37 +6,9 @@ canvas {
   display: block;
 }
 .Arrows{
-  position: relative;
-  display: block;
-  width: 150px;
-  height: 50px;
-  border-radius: 10px 5px 5px 10px;
-  background: lightgrey;
-  font: 22px Constantia, sans-serif;
-  color: blue;
-  line-height: 50px;
-  text-align: center;
-  text-decoration: none;
-}
-.Arrows:before,
-.Arrows:after {
-  content: '';
-  position: absolute;
-  right: -15px;
-  width: 32px;
-  height: 15px;
-  border-radius: 5px;
-  background: lightgrey;
-}
-.Arrows:before {
-  top: 9px;
-  -webkit-transform: rotate(65deg);
-  -ms-transform: rotate(65deg);
-  transform: rotate(65deg);
-}
-.Arrows:after {
-  bottom: 9px;
-  -webkit-transform: rotate(-65deg);
-  -ms-transform: rotate(-65deg);
-  transform: rotate(-65deg);
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+   border-right: 50px solid transparent;
+    border-bottom: 100px solid #32557f;
 }
