@@ -1,6 +1,8 @@
 class Form{
     constructor(){
         this.touchStart = false;
+        this.touchStartLeft = false;
+        this.touchStartRight = false;
        this.image1 = loadImage("images/player10.png");
        this.image2 = loadImage("images/masked_player0.png");
        this.image3 = loadImage("images/car2.png");
@@ -23,29 +25,40 @@ class Form{
             this.up.touchStarted(  () => {
                 this.touchStart = true;
                 console.log("Touch started");
-                y = y - 50;
               })   
               this.up.touchEnded(  () => {
                 this.touchStart = false;
                 console.log("Touch ended");
                 // y = y - 50;
               })   
+
             this.left = createButton("");
             this.boxLeft = createDiv("");
 
-            this.left.mousePressed( () => {
+            this.left.touchStarted( () => {
+                this.touchStartLeft = true;
                 console.log("Move left");
+              })   
+              this.left.touchEnded(  () => {
+                this.touchStartLeft = false;
+                console.log("Touch ended");
+                // y = y - 50;
               })   
             
             
             this.right = createButton("");
             this.boxRight = createDiv("");
 
-            this.right.mousePressed( () => {
+            this.right.touchStarted( () => {
+                this.touchStartRight = true;
                 console.log("Move right");
               })   
+            this.right.touchEnded( () =>{
+                this.touchStartRight = false;
+            })
            
-        }
+       }
+
        
        x = windowWidth/2;
        y = 550;
@@ -133,6 +146,9 @@ class Form{
                     if(keyIsDown(UP_ARROW)){
                         y = y - 50;
                     }
+                    if(this.touchStart == true){
+                        y = y - 50;
+                    }
                 camera.position.x = player.x;
                 camera.position.y = player.y;
 
@@ -155,6 +171,11 @@ class Form{
                     x2 = windowWidth/2;
                     // this.this.left_arrow.position(windowWidth - 200, windowHeight *2/3);
                     // this.right_arrow.position(windowWidth - 200, windowHeight *2/3);
+                }
+                if(touches.length > 0){
+                    gameState = 4;
+                    y2  = 550;
+                    x2 = windowWidth/2;
                     this.left.position(windowWidth - 300, windowHeight*2/3 + 100);
                     this.left.class("bt"); 
                     this.boxLeft.class("bt");
@@ -189,6 +210,14 @@ class Form{
                 camera.position.y = y2;
                 console.log(y2);
             }
+            if(gameState == 4 && this.touchStart == true){
+                y2 = y2-100;
+
+                camera.position.x = x3;
+                camera.position.y = y2;
+            }
+
+
             if(gameState == 4 && keyDown(LEFT_ARROW)){
                 x2 = x2-20;
                 //console.log("it works : " + y2);
@@ -197,8 +226,27 @@ class Form{
                 camera.position.y = y2;
                 console.log(y2);
             }
+            if(gameState == 4 && this.touchStartLeft == true){
+                x2 = x2-20;
+                //console.log("it works : " + y2);
+    
+                camera.position.x = x3;
+                camera.position.y = y2;
+                console.log(y2);
+            }
+
+
 
             if(gameState == 4 && keyDown(RIGHT_ARROW)){
+                x2 = x2+20;
+                //console.log("it works : " + y2);
+    
+                camera.position.x = x3;
+                camera.position.y = y2;
+                console.log(y2);
+            }
+            
+            if(gameState == 4 && this.touchStartRight == true){
                 x2 = x2+20;
                 //console.log("it works : " + y2);
     
@@ -231,6 +279,12 @@ class Form{
                 this.cure.y = -8000;
                 this.cure.scale = 0.5;
 
+                this.up.hide();
+                this.boxUp.hide();
+                this.left.hide();
+                this.boxLeft.hide();
+                this.right.hide();
+                this.boxRight.hide();
             }
         }
         
