@@ -23,7 +23,7 @@ class Form{
             this.up.touchStarted(  () => {
                 this.touchStart = true;
                 console.log("Touch started");
-                // y = y - 50;
+                y = y - 50;
               })   
               this.up.touchEnded(  () => {
                 this.touchStart = false;
