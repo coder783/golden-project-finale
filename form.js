@@ -18,12 +18,7 @@ class Form{
 
        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
         this.up = createButton("");
-        this.up.position(windowWidth - 200,windowHeight * 2/3);
-        this.up.class("bt");
         this.boxUp = createDiv("");
-        this.boxUp.class("bt");
-        this.boxUp.class("up");
-        this.boxUp.parent(this.up);
         }
        
        x = windowWidth/2;
@@ -91,10 +86,13 @@ class Form{
             }
             if(gameState == 1 && touches.length > 0){
                 gameState = 2;
-                this.up_arrow.position(windowWidth - 200, windowHeight *2/3);
+                // this.up_arrow.position(windowWidth - 200, windowHeight *2/3);
                 //this.up_arrow.class("Arrows");
-                this.up_arrow.class("Up-arrow");
-                this.up_arrow.style("background", "transparent");
+                this.up.position(windowWidth - 200,windowHeight * 2/3);
+                this.up.class("bt");
+                this.boxUp.class("bt");
+                this.boxUp.class("up");
+                this.boxUp.parent(this.up);
                 touches = [];
             }
         }
