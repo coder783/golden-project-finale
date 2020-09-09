@@ -28,15 +28,15 @@ canvas {
   }
   
   .left {
-  border-top:20px solid transparent;
-    border-right: 40px solid #32557f;
-    border-bottom: 20px solid transparent;
+  border-top:40px solid transparent;
+    border-right: 80px solid yellow;
+    border-bottom: 40px solid transparent;
   }
   
   .right {
-  border-top: 20px solid transparent;
-    border-left: 40px solid #32557f;
-    border-bottom: 20px solid transparent;
+  border-top: 40px solid transparent;
+    border-left: 80px solid yellow;
+    border-bottom: 40px solid transparent;
   
   }
   

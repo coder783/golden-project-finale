@@ -1,5 +1,6 @@
 class Form{
     constructor(){
+        this.touchStart = false;
        this.image1 = loadImage("images/player10.png");
        this.image2 = loadImage("images/masked_player0.png");
        this.image3 = loadImage("images/car2.png");
@@ -17,8 +18,33 @@ class Form{
        player.addImage("player as astronaut", this.image8);
 
        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
-        this.up = createButton("");
-        this.boxUp = createDiv("");
+            this.up = createButton("");
+            this.boxUp = createDiv("");
+            this.up.touchStarted(  () => {
+                this.touchStart = true;
+                console.log("Touch started");
+                // y = y - 50;
+              })   
+              this.up.touchEnded(  () => {
+                this.touchStart = false;
+                console.log("Touch ended");
+                // y = y - 50;
+              })   
+            this.left = createButton("");
+            this.boxLeft = createDiv("");
+
+            this.left.mousePressed( () => {
+                console.log("Move left");
+              })   
+            
+            
+            this.right = createButton("");
+            this.boxRight = createDiv("");
+
+            this.right.mousePressed( () => {
+                console.log("Move right");
+              })   
+           
         }
        
        x = windowWidth/2;
@@ -127,8 +153,19 @@ class Form{
                     gameState = 4;
                     y2  = 550;
                     x2 = windowWidth/2;
-                    // this.left_arrow.position(windowWidth - 200, windowHeight *2/3);
+                    // this.this.left_arrow.position(windowWidth - 200, windowHeight *2/3);
                     // this.right_arrow.position(windowWidth - 200, windowHeight *2/3);
+                    this.left.position(windowWidth - 300, windowHeight*2/3 + 100);
+                    this.left.class("bt"); 
+                    this.boxLeft.class("bt");
+                    this.boxLeft.class("left");
+                    this.boxLeft.parent(this.left);
+
+                    this.right.position(windowWidth - 100, windowHeight*2/3 + 100);
+                    this.right.class("bt");
+                    this.boxRight.class("bt");
+                    this.boxRight.class("right");
+                    this.boxRight.parent(this.right);
                 }
         }
         
