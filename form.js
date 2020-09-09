@@ -278,19 +278,19 @@ class Form{
                 this.cure.x = windowWidth - 120;
                 this.cure.y = -8000;
                 this.cure.scale = 0.5;
-
-                this.up.hide();
-                this.boxUp.hide();
-                this.left.hide();
-                this.boxLeft.hide();
-                this.right.hide();
-                this.boxRight.hide();
+               
             }
         }
         
         gameStateFive(){
             //console.log("it woks yay !!!");
            // player.y = y4;
+           this.up.hide();
+           this.boxUp.hide();
+           this.left.hide();
+           this.boxLeft.hide();
+           this.right.hide();
+           this.boxRight.hide();
             player.scale = 0.40;
             player.x = player.x + 10;
             player.changeAnimation("astronaut animation", this.animation);
