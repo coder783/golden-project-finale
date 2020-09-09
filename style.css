@@ -15,9 +15,9 @@ canvas {
   
   .up {
    
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid blue;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid yellow;
   }
   
   .down {

@@ -127,8 +127,8 @@ class Form{
                     gameState = 4;
                     y2  = 550;
                     x2 = windowWidth/2;
-                    this.left_arrow.position(windowWidth - 200, windowHeight *2/3);
-                    this.right_arrow.position(windowWidth - 200, windowHeight *2/3);
+                    // this.left_arrow.position(windowWidth - 200, windowHeight *2/3);
+                    // this.right_arrow.position(windowWidth - 200, windowHeight *2/3);
                 }
         }
         
