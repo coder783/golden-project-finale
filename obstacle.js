@@ -17,7 +17,7 @@ class Obstacle{
 
         if(this.obstacleGroup.isTouching(player)){
             gameState = 3;
-
+            
             this.obstacleGroup.destroyEach();
 
             x = displayWidth/2;

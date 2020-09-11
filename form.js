@@ -20,6 +20,8 @@ class Form{
        player.addImage("player as astronaut", this.image8);
 
        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+
+        // function isMobile() { try{ document. createEvent("TouchEvent"); return true; } catch(e){ return false; } } if (isMobile()) { # do whatever you wanna do! }
             this.up = createButton("");
             this.boxUp = createDiv("");
             this.up.touchStarted(  () => {
