@@ -19,7 +19,7 @@ class Form{
        player.addImage("player's rocket", this.image5);
        player.addImage("player as astronaut", this.image8);
 
-       if(  ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) ) { 
+       if( (isMobile()) ) { 
 
         // function isMobile() { try{ document. createEvent("TouchEvent"); return true; } catch(e){ return false; } } if (isMobile()) { # do whatever you wanna do! }
             this.up = createButton("");
